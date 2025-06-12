@@ -1,73 +1,27 @@
 {
   "name": "auto-video-editor",
-  "version": "1.0.0",
-  "description": "基于 pyJianYingDraft 的自动视频剪辑工具，支持上传素材并一键生成剪映工程文件",
-  "main": "src/main/main.js",
-  "homepage": "./",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "electron .",
-    "dev": "concurrently \"npm run dev:renderer\" \"wait-on http://localhost:3000 && electron .\"",
-    "dev:renderer": "next dev -p 3000",
-    "build": "npm run build:renderer && npm run build:main",
-    "build:renderer": "next build && next export",
-    "build:main": "electron-builder",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder",
-    "postinstall": "electron-builder install-app-deps"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "build": {
-    "appId": "com.mengjian.auto-video-editor",
-    "productName": "自动视频剪辑工具",
-    "directories": {
-      "output": "dist"
-    },
-    "files": [
-      "src/main/**/*",
-      "out/**/*",
-      "node_modules/**/*",
-      "package.json"
-    ],
-    "mac": {
-      "category": "public.app-category.video",
-      "target": "dmg"
-    },
-    "win": {
-      "target": "nsis"
-    },
-    "linux": {
-      "target": "AppImage"
-    }
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
-  "keywords": [
-    "electron",
-    "video-editing",
-    "automation",
-    "jianying",
-    "capcut"
-  ],
-  "author": "mengjian",
-  "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "concurrently": "^8.0.0",
-    "electron": "^28.0.0",
-    "electron-builder": "^24.0.0",
-    "typescript": "^5.0.0",
-    "wait-on": "^7.0.0"
-  },
-  "dependencies": {
-    "electron-is-dev": "^2.0.0",
-    "next": "^14.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "axios": "^1.6.0",
-    "@mui/material": "^5.15.0",
-    "@emotion/react": "^11.11.0",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.15.0",
-    "formidable": "^3.5.0",
-    "uuid": "^9.0.0"
+    "autoprefixer": "^10.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0",
+    "postcss": "^8.0.0",
+    "tailwindcss": "^3.0.0",
+    "typescript": "^5.0.0"
   }
 }
